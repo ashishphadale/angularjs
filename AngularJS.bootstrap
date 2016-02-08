@@ -1,1 +1,215 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="keyword" content="DDSi" />
+    <meta name="description" content="DDSi" />
+    <title>DDSi 2.0</title>
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Custom Fonts  -->
+    <link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header Starts here -->
+        <header class="row">
+            <div class="headerMainDiv col-xs-12">
+                <div class="logoMainDiv">
+                    <a href="javascript:;" title="DDS Insights"><img src="assets/images/DDSi_Logo.jpg" alt="DDS Insights"></a>
+                </div>
+                <div class="navMenu">
+                    <div id="main-nav" class="hidden-phone hidden-tablet">
+                        <ul>
+                            <li><a href="#index.html" title="Data Entry"><i class=" ace-icon fa fa-tasks bigger-100"></i>Data Entry</a></li>
+                            <li><a href="#reports.html" title="Generate Reports"><i class=" ace-icon fa fa-line-chart bigger-100"></i>Generate Reports</a>
+                                <ul style="width: 260px;">
+                                    <li><a href="#forms.html" title="Measures/Triggers/Action Report">Measures/Triggers/Action Report</a>
+                                    </li>
+                                    <li><a href="#extended-forms.html" title="Measures/Triggers upload sheet">Measures/Triggers upload sheet</a>
+                                    </li>
+                                    <li><a href="#form-wizards.html" title="Hierarchy Report">Hierarchy Report</a> </li>
+                                    <li><a href="#form-wizards.html" title="Meeting Log">Meeting Log</a> </li>
+                                    <li><a href="#form-wizards.html" title="User Report">User Report</a> </li>
+                                    <li><a href="#form-wizards.html" title="Adoption Report">Adoption Report</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="#forms.html" title="Set-up"><i class=" ace-icon fa fa-gear bigger-100"></i>Set-up</a>
+                                <ul>
+                                    <li><a href="#forms.html" title="Meeting Definition">Meeting Definition</a> </li>
+                                    <li><a href="#extended-forms.html" title="Hierarchy Definition">Hierarchy Definition</a>
+                                    </li>
+                                    <li><a href="#form-wizards.html" title="MasterData upload">MasterData upload</a> </li>
+                                    <li><a href="#form-wizards.html" title="User Management">User Management</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="#graphs.html" title="Help"><i class=" ace-icon fa fa-question-circle bigger-100"></i>Help</a>
+                                <ul>
+                                    <li><a href="#graphs.html" title="Ticket for Technical Support">Ticket for Technical Support</a>
+                                    </li>
+                                    <li><a href="#graphs.html" title="Review Ticket Status">Review Ticket Status</a> </li>
+                                    <li><a href="#graphs.html" title="Ticket for Data Content Support">Ticket for Data Content Support</a>
+                                    </li>
+                                    <li><a href="#graphs.html" title="Training/FAQ">Training/FAQ</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </div>
+                <div class="topIconMain">
+                    <div class="topIconDiv">
+                        <a href="javascript:;"><i class=" ace-icon fa fa-sign-in bigger-100"></i></a>
+                    </div>
+                    <div class="topIconDiv">
+                        <a href="javascript:;" onclick="$('#target').toggle();"><i class=" ace-icon fa fa-search bigger-100"></i></a>
+                        
+                        <div class="meetingFinderHolder" id="target" style="display:none;">
+                            <div class="col-xs-3 no-padding">
+                                <label for="txtfilterBy" class="control-label">Subsector :</label>
+                            </div>
+                            <div class="col-xs-9 no-padding">
+                                <select class="form-control" id="Select1">
+                                    <option value="default">-- Select Subsector --</option>
+                                </select>
+                            </div>
+
+                            <div class="space-4 clear"></div>
+
+                            <div class="col-xs-3 no-padding">
+                                <label for="txtfilterBy" class="control-label">Hierarchy :</label>
+                            </div>
+                            <div class="col-xs-9 no-padding">
+                                <select class="form-control" id="Select3">
+                                    <option value="default">-- Select Hierarchy --</option>
+                                </select>
+                            </div>
+
+                            <div class="space-4 clear"></div>
+
+                            <div class="col-xs-3 no-padding">
+                                <label for="txtfilterBy" class="control-label">Meeting type :</label>
+                            </div>
+                            <div class="col-xs-9 no-padding">
+                                <select class="form-control" id="Select4">
+                                    <option value="default">-- Meeting type --</option>
+                                </select>
+                            </div>
+
+                            <div class="space-4 clear"></div>
+
+                            <button data-toggle="button" class="btn btn-default btnBlue floatR" type="button">Search &nbsp;<i class="ace-icon fa fa-search"></i></button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            </header>
+        <!-- Header Ends here -->
+        <!-- Page Content (Content Place Holder) Start -->
+        <section class="mainContent">
+			<div class="space-8 clearfix"></div>
+            
+			<div class="row">
+            <div class="col-xs-12">
+                <div class="dashboardMeetingsDiv">
+                    <div class="floatL">Filter by <strong>Hirarchy</strong> :</div>
+                    <div class="col-lg-4 col-md-5">
+                        <select class="form-control userNameSelect" id="Select2">
+                            <option value="default">-- Please Select --</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+			</div>
+			
+			<div class="space-8 clearfix"></div>
+			
+			<div class="row">
+			
+            <div class="col-xs-12">
+             <!-- PageGridArea Tab Start -->
+
+                <div class="tab-pane fade active in" id="tabadministrator">
+                    <div class="tabbable">
+                        <ul id="Ul2" class="nav nav-tabs padding-12 tab-color-blue background-blue">
+                            <li class="active"><a href="#meetingsTab" data-toggle="tab" title="To Do List">Meetings</a> </li>
+                            <li class=""><a href="#measuresTab" data-toggle="tab" title="Next Meeting">Measures</a> </li>
+                            <li class=""><a href="#triggersTab" data-toggle="tab" title="Next Meeting">Triggers</a> </li>
+                            <li class=""><a href="#topicsTab" data-toggle="tab" title="Next Meeting">Topics</a> </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="meetingsTab">
+    						    <div class="form-group no-margin">
+                                    <div align="right" class="col-xs-8 pull-right no-padding">
+                                        <button data-toggle="button" class="btn btn-xs btnGreen" type="button"><i class="ace-icon fa fa-refresh"></i>&nbsp;Refresh</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-edit "></i>&nbsp;Create Meeting</button>
+                                    </div>
+                                </div>
+                                <div class="space-16 clear"></div>
+                                
+                                <img src="assets/images/dashboard_MeetingsGrid.jpg" style="width:100%;">
+                            </div>
+                            <div class="tab-pane" id="measuresTab">
+                                <div class="form-group no-margin">
+                                    <div align="right" class="col-xs-8 pull-right no-padding">
+                                        <button data-toggle="button" class="btn btn-xs btnGreen" type="button"><i class="ace-icon fa fa-refresh"></i>&nbsp;Refresh</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-plus "></i>&nbsp;Add New</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-remove "></i>&nbsp;Remove</button>
+                                    </div>
+                                </div>
+                                <div class="space-16 clear"></div>
+                                
+                                <img src="assets/images/dashboard_MeasuresGrid.jpg" style="width:100%;">
+                            </div>
+                            <div class="tab-pane" id="triggersTab">
+                                <div class="form-group no-margin">
+                                    <div align="right" class="col-xs-8 pull-right no-padding">
+                                        <button data-toggle="button" class="btn btn-xs btnGreen" type="button"><i class="ace-icon fa fa-refresh"></i>&nbsp;Refresh</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-plus "></i>&nbsp;Add New</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-remove "></i>&nbsp;Remove</button>
+                                    </div>
+                                </div>
+                                <div class="space-16 clear"></div>
+                                
+                                <img src="assets/images/dashboard_TriggersGrid.jpg" style="width:100%;">
+                            </div>
+                            <div class="tab-pane" id="topicsTab">
+                                <div class="form-group no-margin">
+                                    <div align="right" class="col-xs-8 pull-right no-padding">
+                                        <button data-toggle="button" class="btn btn-xs btnGreen" type="button"><i class="ace-icon fa fa-refresh"></i>&nbsp;Refresh</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-plus "></i>&nbsp;Add New</button>
+                                        <button data-toggle="button" class="btn btn-xs btnHomeBlue marL10" type="button"><i class="ace-icon fa fa-remove "></i>&nbsp;Remove</button>
+                                    </div>
+                                </div>
+                                <div class="space-16 clear"></div>
+                                
+                                <img src="assets/images/dashboard_TopicsGrid.jpg" style="width:100%;">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PageGridArea Tab end -->
+            </div>
+            <!-- Page Content (Content Place Holder) End -->
+        </div>
+			</section>
+        <!-- Footer -->
+        <footer><hr/><div class="copyRTxt">© 2016 PROCTER & GAMBLE. ALL RIGHTS RESERVED. THE COPYRIGHT IS OWNED BY PROCTER & GAMBLE</div></footer>
+        <!-- Footer end -->
+    </div>
+    <!-- Page Content - end -->
+</body>
+</html>
